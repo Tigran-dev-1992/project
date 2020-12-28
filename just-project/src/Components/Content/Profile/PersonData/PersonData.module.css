@@ -1,0 +1,44 @@
+.personData div b{
+    color :  #1498A7;
+}
+.personData div {
+    font-family: cursive;
+}
+
+
+.button{
+    background: #1498A7;
+    padding: 5px;
+    color:white;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.button:hover{
+    opacity: 0.7;
+    transition: 0.7s all;
+}
+
+.form b{
+    font-family: cursive;
+}
+
+.form button{
+    background: #1498A7;
+    padding: 5px;
+    color:white;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.form button:hover{
+    opacity: 0.7;
+    transition: 0.7s all;
+}
+
+.contacts{
+    margin-left: 10px;
+}
+.error{
+    color:red;
+    font-family: cursive;
+}

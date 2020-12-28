@@ -1,0 +1,16 @@
+.navbarItems{
+    font-family: 'Nunito', sans-serif;
+}
+.navbarItems a{
+    text-decoration: none;
+    color : white;  
+}
+.navbarItems a.selectedItem{
+    text-decoration: none;
+    color :yellow
+}
+/* @media (max-with: 767px){
+    .navbar{
+        display: hidden;
+    }
+} */

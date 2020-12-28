@@ -1,0 +1,45 @@
+.login{
+    width: 60%;
+    margin: 0 auto;
+    padding: 5px;
+    
+}
+.login h2{
+    color: #1498A7;
+    /* width: 60%; */
+}
+.button{
+    margin-left: 90px;
+    background: #1498A7;
+    padding: 5px;
+    color:white;
+    border-radius: 5px;
+}
+.checkbox{
+    margin-left: 100px;
+    padding :5px;
+    color:#1498A7;
+    font-size: 10px;
+    
+}
+
+.field{
+    margin-top: 5px;
+}
+.loginForm{
+    margin-left: 25px;
+}
+.error{
+    margin-top: 1rem;
+    color : red;
+    padding: 5px;
+    font-family: cursive;
+   
+}
+@media (max-width: 767px){
+    .login{
+        margin: 0 auto;
+        width: 70%;
+    }
+   
+}

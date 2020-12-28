@@ -1,0 +1,21 @@
+.error{
+    color : red;
+    border:1px solid red;
+    border-radius: 5px;
+    padding: 5px;
+   
+}
+
+
+
+.inputError{
+    color: red;
+    font-style: italic;
+}
+
+.inputStyle{
+    border:2px solid #1498A7;
+    border-radius: 5px;
+    padding: 5px;
+    /* color: #1498A7; */
+}

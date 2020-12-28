@@ -1,0 +1,81 @@
+.form{
+    display: inline-block;
+    position: fixed;
+    z-index: 1;
+    
+}
+ 
+.formContainer{
+    text-align: right;
+    max-width: 78%;
+    z-index: 22;
+}
+
+.selectStyle{
+    width: 183px;
+    border:2px solid #1498A7;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 5px;
+    
+}
+.filterIconBlok{
+    width: 172px;
+    padding: 3px;
+    border:2px solid #1498A7;
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    cursor:pointer; 
+    
+}
+
+.button{
+    background: #1498A7;
+    padding: 5px;
+    color:white;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left: 113px;
+}
+.photos{
+    width: 150px;
+    height: 150px;
+}
+.userItem{
+    margin-top: 30px;
+    margin-right: 50px;
+    float: left;
+    text-align: center;
+    vertical-align: middle;
+    
+}
+.itemName{
+    margin-bottom: 5px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 20px;
+    color: black;
+}
+.followedUser button{
+    background: #1498A7;
+    padding: 5px;
+    color:white;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+
+@media (max-width: 767px){
+    .container{
+        max-width: none;
+        right: 10px;
+    }
+    .userItem{
+        width: 50%;
+        margin: 0 auto;
+    }
+    .formContainer{
+        display: none}
+   
+}

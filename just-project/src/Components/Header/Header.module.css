@@ -1,0 +1,25 @@
+ .logo{
+    width: 50px;
+    height: 50px;
+}
+@media (max-width: 767px){
+    .elements div{
+        max-width: none;
+        margin-top: 20px;
+    }
+}
+.logout{
+    color:  #1498A7;
+    padding-top: 10px;
+    padding-right: 20px;
+    font-weight: bold;
+    cursor: pointer;
+  
+}
+.elements{
+    display: flex;
+    justify-content: space-between;
+}
+.header{
+   width: 100%;
+}

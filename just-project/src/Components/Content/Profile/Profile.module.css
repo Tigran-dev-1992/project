@@ -1,0 +1,54 @@
+
+@media (max-width: 767px){
+    .profile{
+        max-width: none;
+        padding: 10px;
+        margin: 0;
+    }
+}
+
+
+.status{
+font-family: cursive;
+padding-top: 10px;
+padding-bottom: 20px;
+}
+.status input{
+    border:2px solid #1498A7;
+    border-radius: 5px;
+    padding: 5px;
+}
+.statusCursor{
+    cursor: pointer;
+}
+
+.img{
+    width: 50%;
+    height: 50%;
+    
+}
+.imgButton{
+    margin-top: 20px;
+    margin-bottom: 20px;
+  
+}
+
+.imgButton input{
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+.imgButton label{
+   background: #1498A7;
+   color: white;
+   border-radius: 5px;
+   padding: 10px;
+   font-family: 'Nunito', sans-serif;
+   cursor: pointer
+}
+
+.imgButton label:hover{
+    opacity: 0.7;
+    transition: 0.7s all;
+}

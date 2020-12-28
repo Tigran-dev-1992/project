@@ -1,0 +1,15 @@
+.small{
+    width: 45%;
+    height: 30%;
+    /* float: right; */
+   
+}
+.preLoader img{
+    max-width: 100%;
+    margin: 0 auto;
+}
+.preLoader {
+    max-width: 1200px;
+    margin: 0 auto;
+    
+}
