@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Dispatch } from 'react'
 import { useDispatch } from 'react-redux'
 import { getCurrentPage } from '../../redux/user-reducer'
 import styles from './Pageinator.module.css'
@@ -19,10 +19,10 @@ type PropsType = {
     porcionSize: number
     porceNumber: number
     currentPage: number
+    dispatch: Dispatch<any>
 }
-export const Paginator: React.FC<PropsType> = ({ friend, term, totalCount, pageSize, porcionSize, porceNumber, currentPage }) => {
+export const Paginator: React.FC<PropsType> = ({ friend, term, totalCount, pageSize, porcionSize, porceNumber, currentPage,dispatch }) => {
   
-    const dispatch = useDispatch()
 
     let pages = []
     const pagesCount = Math.ceil(totalCount / pageSize)

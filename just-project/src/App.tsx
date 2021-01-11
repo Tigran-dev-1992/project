@@ -2,16 +2,17 @@ import React, { useState, Suspense } from 'react';
 import styles from './App.module.css'
 import Header from './Components/Header/Header';
 import Navbar from './Components/Navbar/Navbar';
-import { Route } from 'react-router-dom';
-import Dialogs from './Components/Content/Dialogs/Dialogs';
+import { Redirect, Route } from 'react-router-dom';
 import LoginContainer from './Components/Content/Login/LoginContainer';
 import ProfileContainer from './Components/Content/Profile/ProfileContainer';
 import PreLoader from './Components/commons/PreLoader';
 import Music from './Components/Music/Music';
-import Todo from './Components/Content/todo/Todo';
+
+
 
 
 const UsersContainer = React.lazy(() => import('./Components/Content/Users/UsersContainer'))
+const DialogsContainer = React.lazy(() => import('./Components/Content/Dialogs/Dialogs'))
 
 function App() {
   let [activNavbar, setNavbarStatus] = useState(false)
@@ -23,6 +24,9 @@ function App() {
           : <b ></b>
         }
       </div>
+      <div>
+          <Route exact path='/' render={() => <Redirect to={"/profile"} />} />
+        </div>
       <div className={styles.header}>
         <Header />
       </div>
@@ -33,8 +37,9 @@ function App() {
         <div>
           <Route  path='/profile/:id?' render={() => <ProfileContainer />} />
         </div>
-        <div>
-          <Route path='/dialogs' render={() => <Dialogs />} />
+        <div><Suspense fallback={<PreLoader/>}>
+        <Route path='/dialogs' render={() => <DialogsContainer />} />
+        </Suspense>
         </div>
         <div>
           <Suspense fallback = {<PreLoader/>}>
@@ -48,7 +53,7 @@ function App() {
           <Route path='/music' render={() => <Music />} />
         </div>
         <div>
-          <Route path='/setting' render={() => <Todo />} />
+          <Route path='/setting' render={() => <h1>Here will be Settings</h1>} />
         </div>
       </div>
     </div>

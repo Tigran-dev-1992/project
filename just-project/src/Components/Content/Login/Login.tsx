@@ -25,8 +25,8 @@ const Login :React.FC<LoginPropsType> = (props) =>{
             <LoginReduxForm onSubmit ={setData}  captchaSrc={props.captchaSrc}  />
             <br/>
 
-            (email:   tikokarap@mail.ru)<br/>
-            (pasword: it9284593272)
+            (email:  <b>free@samuraijs.com</b> )<br/>
+            (pasword:   <b>free</b>)
         </div>
     )
 }

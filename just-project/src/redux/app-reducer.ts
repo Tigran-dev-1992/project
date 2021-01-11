@@ -1,5 +1,5 @@
 import { ThunkAction } from "redux-thunk"
-import { getAuthData,AuthActionTypes,AuthInitialStateType } from "./auth-reducer"
+import { getAuthData} from "./auth-reducer"
 import { InferActionsType, RootState } from "./reduxStore"
 
 
@@ -13,7 +13,7 @@ const initialState = {
 }
 
 
-const AppReducer = (state = initialState, action: ActionsType) => {
+const AppReducer = (state = initialState, action: ActionsType):InitialStateType => {
     switch (action.type) {
         case 'SET_INITIALAIZ':
             return {
@@ -30,8 +30,8 @@ const appActions= {
 }
 
 type ActionsType = InferActionsType<typeof appActions>
-export const isInitialaized = ()  :ThunkAction<void,RootState,unknown,ActionsType>=> (dispatch) => {
- let  promise=  dispatch(getAuthData())
+export const isInitialaized = ()  :ThunkAction<void,RootState,unknown,ActionsType>=>async (dispatch) => {
+ let  promise= await  dispatch(getAuthData())
  Promise.all([promise])
         .then(() => {
             dispatch(appActions.setInitialaiz(true))

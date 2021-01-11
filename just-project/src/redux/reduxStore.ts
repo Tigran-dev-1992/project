@@ -6,6 +6,7 @@ import { reducer as formReducer } from 'redux-form'
 import profileReducer from "./profile-reducer"
 import UserReducer from "./user-reducer"
 import AppReducer from "./app-reducer"
+import DialogsReducer from "./dialogs-reducer"
 
 
 let reducers = combineReducers({
@@ -13,7 +14,8 @@ let reducers = combineReducers({
     form: formReducer,
     profilePage: profileReducer,
     usersPage: UserReducer,
-    app: AppReducer
+    app: AppReducer,
+    dialogs: DialogsReducer
 })
 export type RootState = ReturnType<typeof reducers>
 

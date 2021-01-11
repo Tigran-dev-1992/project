@@ -25,6 +25,10 @@ export type ValueType = {
 }
 
 const Users: React.FC = () => {
+    const history = useHistory()
+    const dispatch = useDispatch()
+
+
     const users = useSelector(usersSelector)
     const totalCount = useSelector(totalCountSelector)
     const pageSize = useSelector(pageSizeSelector)
@@ -32,15 +36,19 @@ const Users: React.FC = () => {
     const porceNumber = useSelector(porceNumberSelector)
     let currentPage = useSelector(currentPageSelector)
     const followInProgres = useSelector(followInProgresSelector)
-    const showLoader = useSelector(showLoaderSelector)
     const term = useSelector(termSelector)
     const friend = useSelector(friendSelector)
     const filterVizibility = useSelector(filterFizibilitySelector)
 
     useEffect(() => { Aos.init({ duration: 1500 }) }, [])
 
-    const history = useHistory()
-    const dispatch = useDispatch()
+    
+    useEffect(() => {
+        history.push({
+            pathname: `/users`,
+            search: `?count=100&page=${currentPage}&term=${term}&friend=${friend}`
+        })
+    }, [term, friend, currentPage])
 
     useEffect(() => {
         const parsed = queryString.parse(history.location.search)
@@ -63,13 +71,8 @@ const Users: React.FC = () => {
 
 
 
-    useEffect(() => {
-        history.push({
-            pathname: `/users`,
-            search: `?count=100&page=${currentPage}&term=${term}&friend=${friend}`
-        })
-    }, [term, friend, currentPage])
-
+ 
+    const showLoader = useSelector(showLoaderSelector)
 
     const initialForm = {
         term: term,
@@ -80,7 +83,6 @@ const Users: React.FC = () => {
         if(value!=initialForm) dispatch(getUsers(pageSize, currentPage = 1, value.term, friendValue))
         
     }, 800)
-
     return (
         <div>
             <div>
@@ -93,7 +95,7 @@ const Users: React.FC = () => {
 
                 : <div>
                     <div className={styles.pagesss}>
-                        {Paginator({ term, friend, totalCount, pageSize, porcionSize, porceNumber, currentPage })}
+                        {Paginator({ term, friend, totalCount, pageSize, porcionSize, porceNumber, currentPage,dispatch })}
                     </div>
                     <div className={styles.container} >
                         {users.map(u => {

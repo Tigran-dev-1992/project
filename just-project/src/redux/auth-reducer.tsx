@@ -46,7 +46,7 @@ const authReducer = (state = initialState, action: AuthActionTypes): AuthInitial
 const authActions = {
     setAuthData: (id: number | null, login: string | null, email: string | null, isAuth: boolean) => ({ type: SET_AUTH_DATA, id, login, email, isAuth, } as const),
     setLoading: (loading: boolean) => ({ type: SET_LOADING, loading } as const),
-    setCaptcha: (captchaSrc: string|null) => ({ type: 'SET_CAPTCHA', captchaSrc } as const)
+    setCaptcha: (captchaSrc: string | null) => ({ type: 'SET_CAPTCHA', captchaSrc } as const)
 }
 
 
@@ -84,15 +84,12 @@ export let setLoginData = (email: string, password: string, rememberMe: boolean,
 }
 
 
-export let getAuthData = (): ThunkAction<void, RootState, unknown, AuthActionTypes> => (dispatch) => {
-    return loginApi.isAuthorized()
-        .then(data => {
-            if (data.resultCode === ResultCodeType.Success) {
-                dispatch(authActions.setAuthData(data.data.id, data.data.login, data.data.email, true))
-                dispatch(authActions.setLoading(false))
-            }
-        }
-        )
+export let getAuthData = (): ThunkAction<void, RootState, unknown, AuthActionTypes> => async (dispatch) => {
+    let data = await loginApi.isAuthorized()
+    if (data.resultCode === ResultCodeType.Success) {
+        dispatch(authActions.setAuthData(data.data.id, data.data.login, data.data.email, true))
+        dispatch(authActions.setLoading(false))
+    }
 }
 export let logoutProfile = (): ThunkAction<void, RootState, unknown, AuthActionTypes> => (dispatch) => {
     loginApi.logout()
