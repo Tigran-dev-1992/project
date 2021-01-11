@@ -31,7 +31,6 @@ const UsersFilter: React.FunctionComponent<InjectedFormProps<FormData, PropsType
                     ? <form onSubmit={handleSubmit} className={styles.blank}>
                         {createField<NameType>("friend", "", [], Select, {type:"select" }, '')}
                         {createField<NameType>("term", "enter user name", [], Input, { type: 'search'}, '')}
-                        <button>ppp</button>
                     </form>
                     : ""
                 }

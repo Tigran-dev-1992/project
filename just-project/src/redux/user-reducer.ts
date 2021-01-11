@@ -39,7 +39,7 @@ const initialState = {
     users: [] as Array<UserType>,
     followInProgres: [] as Array<number>,
     showLoader: false,
-    filterVizibility: true
+    filterVizibility: false
 }
 
 
